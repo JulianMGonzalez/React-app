@@ -1,18 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { menuItems } from './MenuItems';
+import { Anchor, Drawer, Button } from 'antd';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 export default function Navbar() {
+    const [visible, setVisible] = useState(false);
+
+    const showDrawer = () => {
+        setVisible(true);
+    };
+
+    const onClose = () => {
+        setVisible(false);
+    };
     return (
-        <div class="container">
-            <header class="d-flex flex-column flex-md-row justify-content-between align-items-center pb-3 mb-4 py-3 mb-4 border-bottom border-2 border-secondary">
-                <Link to='/'><img src="https://image.flaticon.com/icons/png/64/3004/3004703.png" alt='logo' width='60px' height='60px' /></Link>
-                <ul className="nav nav-pills">
-                    {menuItems.map(item => (
-                        <li key={item.id} className='nav-item' ><Link className='me-3 py-2 text-white text-decoration-none' to={item.to}>{item.title}</Link></li>
-                    ))}
-                </ul>
-            </header>
+        <div className='container-fluid'>
+            <div className='header'>
+                <div className='logo'>
+                    <Link to='/'><img src="https://image.flaticon.com/icons/png/64/3004/3004703.png" alt='logo' width='60px' height='60px' /></Link>
+                </div>
+                <div className='mobileHidden'>
+                    <Anchor targetOffset='65'>
+                        {menuItems.map(item => (
+                            <Link className='link' key={item.id} to={item.to}>{item.title} </Link>
+                        ))}
+                    </Anchor>
+                </div>
+                <div className='mobileVisible'>
+                    <Button type="primary" onClick={showDrawer}>
+                        <FontAwesomeIcon icon={faBars} />
+                    </Button>
+                    <Drawer
+                        title="Menu"
+                        placement="right"
+                        closable={false}
+                        onClose={onClose}
+                        visible={visible}
+                    >
+                        {menuItems.map(item => (
+                            <Link className='link' key={item.id} to={item.to}>{item.title} </Link>
+                        ))}
+                    </Drawer>
+                </div>
+            </div>
         </div>
     )
 }

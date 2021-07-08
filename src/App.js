@@ -5,6 +5,7 @@
   import Products from "./components/Products";
   import PrivateRoute from "./services/PrivateRoute";
   import Navbar from "./components/Navbar/Navbar";
+  import 'antd/dist/antd.css';
   import './App.css'
 
   const Home = () => (
