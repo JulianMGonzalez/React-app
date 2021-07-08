@@ -6,13 +6,13 @@ export const menuItems = [
     },
     {
         id: 2,
-        title: 'Categoria',
-        to: '/category'
+        title: 'Reservas',
+        to: '/reservas'
     },
     {
         id: 3,
-        title: 'Productos',
-        to: '/products'
+        title: 'Habitaciones',
+        to: '/habitaciones'
     },
     {
         id: 4,

@@ -30,10 +30,10 @@
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/category">
+          <Route path="/reservas">
             <Category />
           </Route>
-          <Route path="/products">
+          <Route path="/habitaciones">
             <Products />
           </Route>
           <PrivateRoute path="/admin" component={Admin} />
