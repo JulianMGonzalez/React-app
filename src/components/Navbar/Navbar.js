@@ -8,6 +8,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 export default function Navbar() {
     const [visible, setVisible] = useState(false);
 
+
     const showDrawer = () => {
         setVisible(true);
     };
@@ -20,6 +21,7 @@ export default function Navbar() {
             <div className='header'>
                 <div className='logo'>
                     <Link to='/'><img src="https://image.flaticon.com/icons/png/64/3004/3004703.png" alt='logo' width='60px' height='60px' /></Link>
+                    <h1 className='nav-title'>Reservas</h1>
                 </div>
                 <div className='mobileHidden'>
                     <Anchor targetOffset='65'>

@@ -5,14 +5,11 @@
   import Products from "./components/Products";
   import PrivateRoute from "./services/PrivateRoute";
   import Navbar from "./components/Navbar/Navbar";
+  import Home from "./pages/Home";
   import 'antd/dist/antd.css';
   import './App.css'
 
-  const Home = () => (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
+  
 
   const Admin = () => (
     <div>
